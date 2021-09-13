@@ -2,6 +2,7 @@
 Project-3-Files-Phrase Hunter Game
 
 To initiate the game run -- pyhton3 app.py (on your mac shell/terminal)
+Note: game.py & phrase.py are files which are called by app.py makes sure those are on your systems else app will throw an error.
 
 Features Included:
 Game is using Pyhton's Object-Oriented Programming!
