@@ -23,8 +23,6 @@ class Phrase:
         else:
             return False        
     
-#    def check_letter(self, guess):
-#        return guess in self.phrase
         
     def check_complete(self, guesses):
         if len(self.unique_letters) == len(set(guesses)):
