@@ -5,7 +5,8 @@ class Phrase:
     
     def __init__(self, phrase):
         self.phrase = phrase.lower()
-
+        self.unique_letters = set(self.phrase)
+        self.unique_letters.discard(' ')
 
     def display(self, guesses):
         for letter_guess in self.phrase:
@@ -15,21 +16,16 @@ class Phrase:
                 print(f'{letter_guess}', end=" ")
             else:
                 print("_", end=" ")   
-        
-    
 
     def check_letter(self, guess):
         if guess in self.phrase:
             return True
         else:
-            return False
-        
+            return False        
+    
+#    def check_letter(self, guess):
+#        return guess in self.phrase
         
     def check_complete(self, guesses):
-        for letter_guess in self.phrase:
-            if letter_guess not in guesses:
-                return False
+        if len(self.unique_letters) == len(set(guesses)):
             return True
-         
-    def reset(self):
-        self.active_phrases = None
