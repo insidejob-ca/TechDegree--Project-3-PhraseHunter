@@ -25,5 +25,5 @@ class Phrase:
     
         
     def check_complete(self, guesses):
-        if len(self.unique_letters) == len(set(guesses)):
-            return True
+      if len(self.unique_letters - set(guesses)) == 0:
+          return True
