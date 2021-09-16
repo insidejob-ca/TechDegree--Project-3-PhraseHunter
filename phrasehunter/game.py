@@ -68,7 +68,7 @@ class Game:
         return user_guess 
     
 
-    def game_over(self): #controls game result for winning or losing and also resets the active phrases and restarts the new round
+    def game_over(self): #controls game result for winning or losing
         self.active_phrase.display(self.guesses)
         if self.missed == 5:
             print('\nAll the chances are over for guessing the phrase, GAME OVER!\n')
@@ -76,7 +76,7 @@ class Game:
             print('\nCongrats, You guessed it right!!!\n')
             
             
-    def continue_playing(self):
+    def continue_playing(self): and #resets the active phrases and restarts the new round if user wants to continue playing
         user_continuing = input('Would you like to continue playing(Y(es)/N(o)?  ')
         if user_continuing.lower() == 'y':
             self.active_phrase = None
