@@ -2,7 +2,7 @@ from phrasehunter.phrase import Phrase
 import random
 
 class Game:
-    def __init__(self):
+    def __init__(self): # this method sets the defualt values for the attributes 
         self.missed = 0
         self.phrases = [Phrase('try try till'), 
                         Phrase('play to win'), 
@@ -13,7 +13,7 @@ class Game:
         self.guesses = []
     
     
-    def start(self):
+    def start(self):  # starts the game 
         self.welcome()
         self.active_phrase = self.get_random_phrase()
         while self.missed < 5 and not self.active_phrase.check_complete(self.guesses):
@@ -29,16 +29,17 @@ class Game:
         self.continue_playing()
 
     
-    def get_random_phrase(self):
+    def get_random_phrase(self): # to pick a random phrase from the available options for starting the game
         return random.choice(self.phrases)
         
     
-    def welcome(self):
+    def welcome(self): #welcome message to display when game starts
         welcome_title = 'WELCOME TO PHRASEHUNTING GAME'
         print('\n', '=' * len(welcome_title), '{}'.format(welcome_title),'=' * len(welcome_title), '\n')
         
             
     def get_guess(self):
+        #validates the user input for guessing game to make sure valid input and handle exceptions, also counts for user chances left for game to be won
         user_guess = input("Enter the guessing letter for guessing the guess phrase?  ")
 #       print('\n')
         user_guess = user_guess.lower()
@@ -67,7 +68,7 @@ class Game:
         return user_guess 
     
 
-    def game_over(self):
+    def game_over(self): #controls game result for winning or losing and also resets the active phrases and restarts the new round
         self.active_phrase.display(self.guesses)
         if self.missed == 5:
             print('\nAll the chances are over for guessing the phrase, GAME OVER!\n')
